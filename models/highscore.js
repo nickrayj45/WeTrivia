@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
       },
       score: {
-        type: DataTypes.INT,
+        type: DataTypes.INTEGER,
         allowNull: false
     }
 })
