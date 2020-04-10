@@ -1,17 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
-    var Chat = sequelize.define("User", {
-      // The email cannot be null, and must be a proper email before creation
-      email: {
+    var Chat = sequelize.define("Chat", {
+      user: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
-        validate: {
-          isEmail: true
-        }
       },
-      // The password cannot be null
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false
+      message: {
+        type: DataTypes.TEXT,
+        allowNull: false,
       }
-    });
+    })
+    return Chat;
+};
