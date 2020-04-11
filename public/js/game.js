@@ -1,28 +1,49 @@
 var username = localStorage.getItem("username")
+var questionBlock = $("#question")
+var ansA = $("#answer-a")
+var ansB = $("#answer-b")
+var ansC = $("#answer-c")
+var ansD = $("#answer-d")
+var nextQuestion = $("#nextQuestion")
 
 var questionAnsBlock
+var correctAns
+var questionsAsked = 0; 
+
+var playersScore 
+
+function playGame(){
+    playersScore = 0; 
+
+    randomQuestionGenerator();
+
+}
+
+playGame();
 
 function randomQuestionGenerator(){
 var queryURL = "https://opentdb.com/api.php?amount=50&type=multiple"
+
+if (questionsAsked>= 10){
+    endGame();
+    return 
+}
 
 $.ajax({
     url: queryURL,
     method: "GET"
 }).then(function(response){
     
-    questionAnsBlock = $("<div>")
-    $("#newQuestion").append(questionAnsBlock)
-
-    // questions 
-    var question = $("<p>")
-    $(questionAnsBlock).append(question)
     var questionText = response.results[0].question
-    question.text(questionText.replace(/\"/g, ""))
+    var newQuestionStr = replaceAll(questionText)
+    questionBlock.text(newQuestionStr)
     
     var ansArray = [];
 
+    correctAns =  replaceAll(response.results[0].correct_answer)
+
     ansArray.push(response.results[0].incorrect_answers[0],response.results[0].incorrect_answers[1],response.results[0].incorrect_answers[2])
-    ansArray.push( response.results[0].correct_answer)
+    ansArray.push(response.results[0].correct_answer)
 
     console.log(ansArray)
 
@@ -35,13 +56,44 @@ $.ajax({
 
     var randAns = shuffle(ansNums)
 
-    for (let i = 0; i < randAns.length; i++) {
+    ansA.text(replaceAll(ansArray[randAns[0]]))
+    ansB.text(replaceAll(ansArray[randAns[1]]))
+    ansC.text(replaceAll(ansArray[randAns[2]]))
+    ansD.text(replaceAll(ansArray[randAns[3]]))
 
-        var ansDiv = $("<div>").attr("id", i)
-        ansDiv.text(ansArray[randAns[i]])
-        $(question).append(ansDiv)
-    }
+    questionsAsked ++
 })
 };
 
-randomQuestionGenerator();
+
+function replaceAll (string){
+    var temp = string.replace(/&quot;/g, "\"");
+    temp = temp.replace(/&#039;/g, "\'");
+    temp = temp.replace(/&ldquo;/g, "\"");
+    temp = temp.replace(/&rdquo;/g, "\"");
+    
+    return temp
+};
+
+$(nextQuestion).on("click", function () {
+    playersScore --
+    setTimeout(randomQuestionGenerator,1000)
+});
+
+$(".answerButton").on("click", function () {
+    if ($(this).text() === correctAns){
+        $(this).text("CORRECT")
+        playersScore ++
+        setTimeout(randomQuestionGenerator,1000)
+    } else {
+        $(this).text("WRONG")
+        setTimeout(randomQuestionGenerator,1000)
+    }
+});
+
+function endGame(){
+    // new divs - Score 
+    // high scores 
+    // play again
+    // post request to push data into db 
+}
