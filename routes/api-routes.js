@@ -47,11 +47,21 @@ module.exports = function(app) {
     }
   });
 
-  //Route for retrieving chatlog
+  //Routes for retrieving and creating chatlog
   app.get("/api/chatlog", function(req,res){
-
+    db.Chat.findAll({}).then(function(chatlog) {
+      res.json(chatlog);
+    });
   });
 
-
+  app.post("/api/chatlog", function(req, res) {
+    console.log(req.body);
+    db.Chat.create({
+      user: req.body.user,
+      message: req.body.message
+    }).then(function(chatlog) {
+      res.json(chatlog);
+    });
+  });
 
 };
