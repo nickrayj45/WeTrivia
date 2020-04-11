@@ -1,24 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <!-- <link rel="stylesheet" href=".css/style.css"> -->
+    <title>Trivia Game</title>
 </head>
-<body>
-    <div class = "score"> <h3>"Current score: "</h3></div>
-</br>
-    <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores alias fugiat tenetur harum, fuga amet adipisci doloremque, consequuntur accusamus ex obcaecati soluta accusantium ullam in aperiam, illo facere eos a.</h2>
-    <div class = "card" id="A"><h5>Answer A</h5> </div> 
-    <div class = "card" id="B"><h5>Answer B</h5> </div> 
-    <div class = "card" id="C"><h5>Answer C</h5> </div> 
-    <div class = "card" id="D"><h5>Answer D</h5> </div> 
-</br>
-</br>
-    <div class = "chat">Chat</div>
 
+<body>
+    <div class="container">
+        <div class="score">
+            <h3>Your Score: </h3>
+        </div>
+        </br>
+        <article class="has-background-primary is-size-5" id="question">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Dolores alias fugiat tenetur harum, fuga amet adipisci
+            doloremque, consequuntur accusamus ex obcaecati soluta accusantium ullam in aperiam, illo facere eos a.
+        </article>
+        </br>
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="card choice is-size-4" id="answer-a">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam, est
+                            laudantium quo tempora amet ut!</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card choice is-size-4" id="answer-b">
+                        Answer B
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card choice is-size-4" id="answer-c">
+                        Answer C
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="card choice is-size-4" id="answer-d">
+                        Answer D
+                    </div>
+                </div>
+                </br>
+            </div>
+            <div>
+                <button class="button is-warning">Next Question</button>
+            </div>
+        </div>
+        </br>
+        <div class="chat is-size-6">Chat</div>
+    </div>
+    </br>
+    </br>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
-
 </body>
+
 </html>
