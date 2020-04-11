@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
     <title>Main Page</title>
 </head>
+
 <body>
-    <h1>WeTrivia</h1>
-    <h3>Play. Win. Chat.</h3>
     <div class="container">
-        <img src="https://cdn3.iconfinder.com/data/icons/pop-art/130/79-512.png" alt="?s">
-        <div class="usernamesection">
-            <h3>Create a Username</h3>
-            <label for="username"></label>
-            <input type="text">
+        <h1>WeTrivia</h1>
+        <h3>Play. Win. Chat.</h3>
+        <div class="container">
+            <img src="https://cdn3.iconfinder.com/data/icons/pop-art/130/79-512.png" alt="?s">
+            <div class="usernamesection">
+                <h3>Create a Username</h3>
+                <label for="username"></label>
+                <input id="inputText" type="text">
+            </div>
+            <div class="high_scores">
+                <ol>High Scores:
+                    <li>First </li>
+                    <li>Second </li>
+                    <li>Third </li>
+                    <li>Fourth </li>
+                    <li>Fifth </li>
+                </ol>
+            </div>
+            <button id="startButton">Start</button>
         </div>
-        <div class="high_scores"> <ol>"High Scores:" 
-            <li>A </li>
-            <li>B </li>
-            <li>C </li>
-            <li>D </li>
-            <li>E </li>
-        </ol>
-             </div>
-        <button>Start</button>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
+
 </body>
+
 </html>
