@@ -22,6 +22,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/game.html"));
   });
 
+  //for chat testing
+  app.get("/chat", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/chat.html"));
+  });
+
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {

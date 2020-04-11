@@ -29,8 +29,18 @@ require("./routes/api-routes.js")(app);
 
 
 db.sequelize.sync().then(function() {
-  app.listen(PORT, function() {
+  var server = app.listen(PORT, function() {
     console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+  });
+
+  // Requiring socket for chat
+  var io = require("socket.io")(server);
+  // namespace
+  const nsp = io.of("/chat");
+  nsp.on("connection", function(socket){
+    socket.on("chat message", function(msg){
+      nsp.emit("chat message", msg);
+    });
   });
 });
 
