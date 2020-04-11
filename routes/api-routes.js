@@ -46,4 +46,12 @@ module.exports = function(app) {
       });
     }
   });
+
+  //Route for retrieving chatlog
+  app.get("/api/chatlog", function(req,res){
+
+  });
+
+
+
 };
