@@ -5,36 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <link href="stylesheets/style.css" rel="stylesheet">
-    <title>Main Page</title>
+    <link href="stylesheets/home.css" rel="stylesheet">
+    <title>Welcome to WeTrivia!!</title>
 </head>
 
 <body>
-    <div class="container">
-        <h1>WeTrivia</h1>
-        <h3>Play. Win. Chat.</h3>
-        <div class="container">
-            <img src="https://cdn3.iconfinder.com/data/icons/pop-art/130/79-512.png" alt="?s">
-            <div class="usernamesection">
-                <h3>Create a Username</h3>
-                <label for="username"></label>
-                <input id="inputText" type="text">
+    <div class="container" id="home">
+        <div class="columns">
+            <div class="column is-centered">
+                <p class="is-size-2">WeTrivia</p>
+                <h3>Play. Win. Chat.</h3>
+                <div class="container">
+                    <div class="columns">
+                        <div class="column btns-column">
+                            <button class="button is-info" id="login-btn">Log In</button>
+                            <button class="button is-success" id="signup-btn">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="high_scores">
-                <ol>High Scores:
-                    <li>First </li>
-                    <li>Second </li>
-                    <li>Third </li>
-                    <li>Fourth </li>
-                    <li>Fifth </li>
-                </ol>
-            </div>
-            <button id="startButton"> </button>
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/home.js"></script>
+        <div class="container login-container hide" id="login-container">
+            <div class="column">
+                <div class="alert-user hide-error">Incorrect login. Try again.</div>
+                <div class="col-md-6 col-md-offset-3">
+                    <h2>Login Form</h2>
+                    <form class="login">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="email-input" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="password-input" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-default">Login</button>
+
+                    </form>
+                    <br />
+                    <p>Or sign up <a href="/">here</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container signup-container hide" id="signup-container">
+            <div class="col-md-6 col-md-offset-3">
+                <h2>Sign Up Form</h2>
+                <form class="signup">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="email-input" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="password-input" placeholder="Password">
+                    </div>
+                    <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span> <span class="msg"></span>
+                    </div>
+                    <button type="submit" class="btn btn-default">Sign Up</button>
+                </form>
+                <br />
+                <p>Or log in <a href="/login">here</a></p>
+            </div>
+        </div>
+
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/home.js"></script>
 
 </body>
 

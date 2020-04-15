@@ -1,0 +1,17 @@
+html {
+    background-image: url("bkgrd.png");
+    background-size: cover;
+    height: 100%;
+}
+
+body {
+    margin-top: 10%
+}
+
+.hide {
+    display: none;
+  }
+
+.hide-error {
+   display: none;
+ }
