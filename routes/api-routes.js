@@ -59,6 +59,19 @@ module.exports = function (app) {
     });
   });
 
+  app.post("/api/highscore", function(req, res){
+    db.Highscore.create({
+      user: req.body.user, 
+      score: req.body.score, 
+    })
+    .then(function(dbHighscore){
+      console.log("got created")
+      res.json(dbHighscore);
+    });
+  });
+
+
+
   app.post("/api/chatlog", function (req, res) {
     console.log(req.body);
     db.Chat.create({

@@ -1,0 +1,82 @@
+html {
+    background-image: url("bkgrd.png");
+    background-size: cover;
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    /* color: white; */
+}
+
+.triviaType {
+    height: 160px;
+    width: 160px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    display: inline-block;
+    margin: 20px;
+    line-height: 2.5rem;
+    position: relative;
+    transition: 0.3s;
+    font-size: 18px;
+    padding-top: 20px;
+}
+
+.triviaType::before,
+.triviaType::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+    border-radius: 25px;
+    text-emphasis: center;
+}
+
+.triviaType::before {
+    background-color: #e8439b;
+    z-index: -1;
+}
+
+.triviaType::after {
+    background-color: #b24de8;
+    transform: translate(0.8rem, 0.8rem);
+    z-index: -2;
+}
+
+.triviaType:hover {
+    transform: translate(0.8rem, 0.8rem);
+}
+
+.triviaType:hover::before {
+    background-color: #b24de8;
+}
+
+.triviaType:hover::after {
+    background-color: #e8439b;
+    transform: translate(-0.8rem, -0.8rem);
+}
+
+
+.header {
+    font-size: 36px;
+    text-align: center;
+}
+
+.column {
+    text-align: center;
+    justify-content: center;
+}
+
+
+
