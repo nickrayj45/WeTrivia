@@ -83,11 +83,13 @@ $(nextQuestion).on("click", function () {
 $(".answerButton").on("click", function () {
     if ($(this).text() === correctAns){
         $(this).text("CORRECT")
+        $('audio#right')[0].play()
         playersScore ++
         setTimeout(randomQuestionGenerator,1000)
     } else {
         $(this).text("WRONG")
         setTimeout(randomQuestionGenerator,1000)
+        $('audio#wrong')[0].play()
     }
 });
 
