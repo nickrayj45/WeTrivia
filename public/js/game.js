@@ -97,6 +97,7 @@ $(nextQuestion).on("click", function () {
 $(".answerButton").on("click", function () {
     if ($(this).text() === correctAns){
         $(this).text("CORRECT")
+        $('audio#right')[0].play()
         playersScore ++
         $(this).addClass('activeRight');
         setTimeout(randomQuestionGenerator,1000)
@@ -104,6 +105,7 @@ $(".answerButton").on("click", function () {
         $(this).text("WRONG")
         $(this).addClass('activeWrong');
         setTimeout(randomQuestionGenerator,1000)
+        $('audio#wrong')[0].play()
     }
 });
 
