@@ -52,6 +52,17 @@ module.exports = function(app) {
 
   });
 
+  app.post("/api/highscore", function(req, res){
+    db.Highscore.create({
+      user: req.body.user, 
+      score: req.body.score, 
+    })
+    .then(function(dbHighscore){
+      console.log("got created")
+      res.json(dbHighscore);
+    });
+  });
+
 
 
 };

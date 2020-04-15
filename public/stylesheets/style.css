@@ -2,3 +2,59 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+.hide {
+  display: none;
+}
+
+.rotate {
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 25px;
+}
+
+@-webkit-keyframes spin2 {
+  0%  {-webkit-transform: rotateX(0deg);
+  background-color: #ffffff;}
+  100% {-webkit-transform: rotateX(360deg);
+  background-color: #eb4634;}   
+}
+
+@-webkit-keXframes spin {
+  0%  {-webkit-transform: rotateX(0deg);
+  background-color: #ffffff;}
+  100% {-webkit-transform: rotateX(360deg);
+  background-color: #2cbf53;}   
+}
+
+
+.rotate.activeRight {
+  -webkit-animation: spin 1.3s linear;
+}
+
+.rotate.activeWrong {
+  -webkit-animation: spin2 1.3s linear;
+}
+
+#question {
+  padding: 12px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 25px;
+  font-size: 25px!important;
+}
+
+#nextQuestion {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+#playAgain {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}

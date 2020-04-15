@@ -5,6 +5,10 @@ var ansB = $("#answer-b")
 var ansC = $("#answer-c")
 var ansD = $("#answer-d")
 var nextQuestion = $("#nextQuestion")
+var gameScreen = $("#gamescreen")
+var highScores = $(".highscores")
+var results = $("#resultsArea")
+var playAgain = $("#playAgain")
 
 var questionAnsBlock
 var correctAns
@@ -16,7 +20,6 @@ function playGame(){
     playersScore = 0; 
 
     randomQuestionGenerator();
-
 }
 
 playGame();
@@ -24,16 +27,23 @@ playGame();
 function randomQuestionGenerator(){
 var queryURL = "https://opentdb.com/api.php?amount=50&type=multiple"
 
-if (questionsAsked>= 10){
+if (questionsAsked>= 4){
     endGame();
     return 
 }
+
+$(".answerButton").removeClass('activeRight');
+$(".answerButton").removeClass('activeWrong');
 
 $.ajax({
     url: queryURL,
     method: "GET"
 }).then(function(response){
-    
+    // if ($(".answerButton").hasClass('activeRight') || $(".answerButton").hasClass('activeRight')){
+    //     $(".answerButton").removeClass('activeRight');
+    //     $(".answerButton").removeClass('activeWrong');
+    // }
+        
     var questionText = response.results[0].question
     var newQuestionStr = replaceAll(questionText)
     questionBlock.text(newQuestionStr)
@@ -71,6 +81,10 @@ function replaceAll (string){
     temp = temp.replace(/&#039;/g, "\'");
     temp = temp.replace(/&ldquo;/g, "\"");
     temp = temp.replace(/&rdquo;/g, "\"");
+    temp = temp.replace(/&amp;/g, "\#");
+    temp = temp.replace(/&Uuml;/g, "\Ü");
+    temp = temp.replace(/&hellip;/g, "\ ...");
+    temp = temp.replace(/&deg;/g, "\°");
     
     return temp
 };
@@ -84,16 +98,36 @@ $(".answerButton").on("click", function () {
     if ($(this).text() === correctAns){
         $(this).text("CORRECT")
         playersScore ++
+        $(this).addClass('activeRight');
         setTimeout(randomQuestionGenerator,1000)
     } else {
         $(this).text("WRONG")
+        $(this).addClass('activeWrong');
         setTimeout(randomQuestionGenerator,1000)
     }
 });
 
 function endGame(){
-    // new divs - Score 
-    // high scores 
-    // play again
     // post request to push data into db 
+    $(gameScreen).addClass("hide")
+    $(questionBlock).addClass("hide")
+    
+    $(results).removeClass("hide")
+    $(highScores).removeClass("hide")
+    $(highScores).text("Your Score: "+playersScore)
+    
+    var newHighscore = {
+        user: username,
+        score: playersScore,
+    };
+
+    $.post("/api/highscore", newHighscore, function(){
+        return
+    })
+
 }
+
+$(playAgain).on("click", function(){
+    location.reload();
+})
+
