@@ -34,6 +34,10 @@ $(document).ready(function() {
       })
       .catch(function(err) {
         console.log(err);
+        // input info to inform user that they have the incorrect email/password
       });
   }
+  
 });
+
+
