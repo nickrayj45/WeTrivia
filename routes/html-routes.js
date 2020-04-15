@@ -15,7 +15,7 @@ module.exports = function(app) {
   // });
 
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
   app.get("/game", function(req, res) {
@@ -27,11 +27,19 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/chat.html"));
   });
 
+  // to connect to the signup
+  app.get("/signup", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
+  });
+
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
       res.redirect("/members");
-    }
+    } 
+    //   else { console.log(res);
+    //   res.render("/login", { messages: req.flash(res.message)});
+    // }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
