@@ -15,17 +15,18 @@ var correctAns
 var questionsAsked = 0; 
 
 var playersScore 
+ 
 
 function playGame(){
     playersScore = 0; 
-
     randomQuestionGenerator();
 }
 
 playGame();
 
 function randomQuestionGenerator(){
-var queryURL = "https://opentdb.com/api.php?amount=50&type=multiple"
+
+var queryURL = localStorage.getItem("gameType")
 
 if (questionsAsked>= 4){
     endGame();
@@ -39,10 +40,6 @@ $.ajax({
     url: queryURL,
     method: "GET"
 }).then(function(response){
-    // if ($(".answerButton").hasClass('activeRight') || $(".answerButton").hasClass('activeRight')){
-    //     $(".answerButton").removeClass('activeRight');
-    //     $(".answerButton").removeClass('activeWrong');
-    // }
         
     var questionText = response.results[0].question
     var newQuestionStr = replaceAll(questionText)
@@ -97,7 +94,6 @@ $(nextQuestion).on("click", function () {
 $(".answerButton").on("click", function () {
     if ($(this).text() === correctAns){
         $(this).text("CORRECT")
-        $('audio#right')[0].play()
         playersScore ++
         $(this).addClass('activeRight');
         setTimeout(randomQuestionGenerator,1000)
@@ -105,7 +101,6 @@ $(".answerButton").on("click", function () {
         $(this).text("WRONG")
         $(this).addClass('activeWrong');
         setTimeout(randomQuestionGenerator,1000)
-        $('audio#wrong')[0].play()
     }
 });
 
