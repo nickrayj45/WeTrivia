@@ -1,4 +1,6 @@
 // Variables that we will need
+
+
 $("#login-btn").on("click", function () {
   $("#home").addClass("hide");
   $(".login-container").removeClass("hide");
@@ -9,9 +11,15 @@ $("#signup-btn").on("click", function () {
   $(".signup-container").removeClass("hide");
   });
 
+$(".signup-link").on("click", function () {
+  $(".login-container").addClass("hide");
+  $(".signup-container").removeClass("hide");
+});
 
-
-
+$(".login-link").on("click", function () {
+  $(".signup-container").addClass("hide");
+  $(".login-container").removeClass("hide");
+});
 
 $("#start-btn").on("click", function () {
   var user = $("#inputText").val();

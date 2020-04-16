@@ -2,11 +2,31 @@ html {
     background-image: url("bkgrd.png");
     background-size: cover;
     height: 100%;
+    animation: backgroundcolorchange 6s infinite alternate;
+    opacity: 1;
 }
 
-body {
-    margin-top: 10%
+@keyframes backgroundcolorchange {
+  0% { background-color: #6c9fce }
+  33% { background-color: #fa88b3 }
+  66% { background-color: #2dd8b6 }
+  100% { background-color: #375885 }
 }
+
+
+body {
+  margin-top: 10%;
+  min-height: 100%;
+  margin: 0;
+  display: flex;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+}
+
+
 
 .hide {
     display: none;
@@ -15,3 +35,42 @@ body {
 .hide-error {
    display: none;
  }
+
+
+ .pwc {
+  position: relative;
+  font-family: 'Roboto Mono', monospace;
+  text-transform: uppercase;
+  font-size: 2em;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: animate 6s linear infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+/* .login-container {
+  margin-left: 40%;
+}
+
+.signup-container {
+  margin-left: 40%
+} */
+
+.form-box {
+  max-width: 300px;
+  display: block;
+}
+
+
+@keyframes animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}

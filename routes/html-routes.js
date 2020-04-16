@@ -15,7 +15,7 @@ module.exports = function(app) {
   // });
 
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
   app.get("/game", function(req, res) {
@@ -36,15 +36,11 @@ module.exports = function(app) {
     // If the user already has an account send them to the categories page
     if (req.user) {
       res.redirect("/categories");
-    } else {
-      res.sendFile(path.join(__dirname, "../public/login.html"));
+    } 
+      else { 
+      res.redirect("/");
     }
-    //   else { console.log(res);
-    //   res.render("/login", { messages: req.flash(res.message)});
-    // }
-
-    // **************** might be issue - need the else 
-    // res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
