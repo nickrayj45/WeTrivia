@@ -2,9 +2,17 @@ html {
     background-image: url("bkgrd.png");
     background-size: cover;
     height: 100%;
-    animation: backgroundcolorchange 5s infinite alternate;
+    animation: backgroundcolorchange 6s infinite alternate;
     opacity: 1;
 }
+
+@keyframes backgroundcolorchange {
+  0% { background-color: #6c9fce }
+  33% { background-color: #fa88b3 }
+  66% { background-color: #2dd8b6 }
+  100% { background-color: #375885 }
+}
+
 
 body {
   margin-top: 10%;
@@ -18,14 +26,6 @@ body {
   font-weight: bold;
 }
 
-@keyframes backgroundcolorchange {
-  0% { background-color: #6c9fce }
-  33% { background-color: #fa88b3 }
-  66% { background-color: #2dd8b6 }
-  100% { background-color: #375885 }
-  /* 80% { background-color: #A6192E }
-  100% { background-color: #0a3564 } */
-}
 
 
 .hide {
@@ -52,17 +52,19 @@ body {
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
-.login-container {
+/* .login-container {
   margin-left: 40%;
 }
 
 .signup-container {
   margin-left: 40%
-}
+} */
 
 .form-box {
   max-width: 300px;
+  display: block;
 }
+
 
 @keyframes animate {
   0% {
