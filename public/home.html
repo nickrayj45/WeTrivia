@@ -15,82 +15,85 @@
 
 <body>
     <div class="all-divs">
-    <div class="container" id="home">
-        <div class="columns">
-            <div class="column is-centered">
-                <p class="is-size-1">WeTrivia</p>
-                <br />
-                <img id="q-gif" src="./img/questionmarkgif.gif">
-                <p class="pwc">Play. Win. Chat.</p>
-                <div class="container">
-                    <div class="columns">
-                        <div class="column btns-column">
-                            <br />
-                            <button class="button is-info" id="login-btn">Log In</button>
-                            <button class="button is-success" id="signup-btn">Sign Up</button>
+        <div class="container" id="home">
+            <div class="columns">
+                <div class="column is-centered">
+                    <p class="is-size-1">WeTrivia</p>
+                    <img id="q-gif" src="./img/questionmarkgif.gif">
+                    <p class="pwc">Play. Win. Chat.</p>
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column btns-column">
+                                <br />
+                                <button class="button is-info" id="login-btn">Log In</button>
+                                <button class="button is-success" id="signup-btn">Sign Up</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container login-container hide" id="login-container">
-        <div class="columns is-centered">
-            <div class="column login-column">
-                <div class="alert-user hide-error">Incorrect login. Try again.</div>
-                <div class="col-md-6 col-md-offset-3">
+        <div class="container login-container hide" id="login-container">
+            <div class="columns">
+                <div class="column login-column">
                     <div class="box form-box">
-                        <h2>Login Form</h2>
-                        <br />
-                        <form class="login">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">E-mail: </label>
-                                <input type="email" class="form-control" id="email-input" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password:</label>
-                                <input type="password" class="form-control" id="password-input" placeholder="Password">
+                        <div class="field">
+                            <div class="alert-user hide-error">Incorrect login. Try again.</div>
+                            <h2>Log In Form</h2>
+                            <br />
+                            <label class="label" id="username-line">Username</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Username">
                             </div>
                             <br />
-                            <button type="submit" class="button btn-default is-info">Log In</button>
+                            <label class="label" id="password">Password</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Password">
+                            </div>
+                        </div>
+                        <button type="submit" class="button" id="login-screen-button">Log In</button>
                         </form>
                         <p>Or sign up <a class="signup-link">here</a></p>
                     </div>
+
+
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="container signup-container hide is-mobile" id="signup-container">
-        <div class="columns">
-            <div class="column is-centered signup-column">
-                <div class="box form-box">
-                    <h2>Sign Up Form</h2>
-                    <br />
-                    <form class="signup">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">E-mail:</label>
-                            <input type="email" class="form-control" id="email-input" placeholder="Email">
+
+
+
+        <div class="container signup-container hide is-mobile" id="signup-container">
+            <div class="columns">
+                <div class="column signup-column">
+                    <div class="box form-box">
+                        <div class="field">
+                            <h2>Sign Up Form</h2>
+                            <br />
+                            <label class="label" id="email-line">Email</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Email">
+                            </div>
+                            <br />
+                            <label class="label" id="username-line">Username</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Username">
+                            </div>
+                            <br />
+                            <label class="label" id="password">Password</label>
+                            <div class="control">
+                                <input class="input" type="text" placeholder="Password">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password:</label>
-                            <input type="password" class="form-control" id="password-input" placeholder="Password">
-                        </div>
-                        <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                            <span class="sr-only">Error:</span> <span class="msg"></span>
-                        </div>
-                        <br />
-                        <button type="submit" class="button btn-default is-success">Sign Up</button>
+                        <button type="submit" class="button" id="signup-screen-button">Sign Up</button>
                         <p>Or log in <a class="login-link">here</a></p>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-</div>
 
     <audio id="startmusic">
         <source src="audio/startjingle.mp3" type="audio/mpeg">
