@@ -15,7 +15,7 @@ module.exports = function(app) {
   // });
 
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
   app.get("/game", function(req, res) {
@@ -37,9 +37,9 @@ module.exports = function(app) {
     if (req.user) {
       res.redirect("/categories");
     } 
-    //   else { console.log(res);
-    //   res.render("/login", { messages: req.flash(res.message)});
-    // }
+      else { 
+      res.redirect("/");
+    }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
