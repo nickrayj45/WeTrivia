@@ -58,3 +58,10 @@ form.login {
   display: flex;
   justify-content: center;
 }
+
+#goHome {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}

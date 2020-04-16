@@ -9,11 +9,14 @@ var gameScreen = $("#gamescreen")
 var highScores = $(".highscores")
 var results = $("#resultsArea")
 var playAgain = $("#playAgain")
+//
+var goHome = $("#goHome")
 
 var questionAnsBlock
 var correctAns
 var questionsAsked = 0; 
 
+//replace random numbers- this keep track of score
 var playersScore 
  
 
@@ -104,6 +107,7 @@ $(".answerButton").on("click", function () {
     }
 });
 
+//end game 
 function endGame(){
     // post request to push data into db 
     $(gameScreen).addClass("hide")
@@ -126,5 +130,8 @@ function endGame(){
 
 $(playAgain).on("click", function(){
     location.reload();
+})
+$(goHome).on("click", function(){
+    location.assign("home.html");
 })
 
