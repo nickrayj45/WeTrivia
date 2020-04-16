@@ -1,16 +1,16 @@
 // Variables that we will need
+
+
 $("#login-btn").on("click", function () {
   $("#home").addClass("hide");
   $(".login-container").removeClass("hide");
+  $("#powerup").play()
 });
 
 $("#signup-btn").on("click", function () {
   $("#home").addClass("hide");
   $(".signup-container").removeClass("hide");
   });
-
-
-
 
 
 $("#start-btn").on("click", function () {
