@@ -36,11 +36,15 @@ module.exports = function(app) {
     // If the user already has an account send them to the categories page
     if (req.user) {
       res.redirect("/categories");
-    } 
+    } else {
+      res.sendFile(path.join(__dirname, "../public/login.html"));
+    }
     //   else { console.log(res);
     //   res.render("/login", { messages: req.flash(res.message)});
     // }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+
+    // **************** might be issue - need the else 
+    // res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.
