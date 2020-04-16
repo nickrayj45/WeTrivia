@@ -72,7 +72,6 @@ module.exports = function (app) {
   });
 
   app.post("/api/chatlog", function (req, res) {
-    console.log(req.body);
     db.Chat.create({
       user: req.body.user,
       message: req.body.message,

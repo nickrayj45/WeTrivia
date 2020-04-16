@@ -66,3 +66,10 @@ body, html {
   display: flex;
   justify-content: center;
 }
+
+#chatMessenger{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 9;
+}
