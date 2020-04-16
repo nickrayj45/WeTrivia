@@ -21,6 +21,7 @@ module.exports = function (app) {
     db.User.create({
       email: req.body.email,
       password: req.body.password,
+      username: req.body.username,
     })
       .then(function () {
         res.redirect(307, "/api/login");
@@ -48,6 +49,7 @@ module.exports = function (app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
+        username: req.user.username
       });
     }
   });
@@ -70,7 +72,6 @@ module.exports = function (app) {
   });
 
   app.post("/api/chatlog", function (req, res) {
-    console.log(req.body);
     db.Chat.create({
       user: req.body.user,
       message: req.body.message,
