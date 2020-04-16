@@ -1,6 +1,5 @@
 html {
-    background-image: url("bkgrd.png");
-    background-size: cover;
+    background-color: #FFCA5A;
     height: 100%;
 }
 
@@ -12,7 +11,7 @@ body {
     justify-content: center;
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
-    /* color: white; */
+    color: white;
 }
 
 .triviaType {
@@ -44,12 +43,12 @@ body {
 }
 
 .triviaType::before {
-    background-color: #e8439b;
+    background-color:#0271bb;
     z-index: -1;
 }
 
 .triviaType::after {
-    background-color: #b24de8;
+    background-color: #FE6355;
     transform: translate(0.8rem, 0.8rem);
     z-index: -2;
 }
@@ -59,11 +58,11 @@ body {
 }
 
 .triviaType:hover::before {
-    background-color: #b24de8;
+    background-color: #FE6355;
 }
 
 .triviaType:hover::after {
-    background-color: #e8439b;
+    background-color: 	#0271bb;
     transform: translate(-0.8rem, -0.8rem);
 }
 

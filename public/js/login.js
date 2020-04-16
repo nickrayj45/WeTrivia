@@ -1,8 +1,8 @@
 $(document).ready(function () {
   // Getting references to our form and inputs
   var loginForm = $("form.login");
-  var emailInput = $("#email-input");
-  var passwordInput = $("#password-input");
+  var emailInput = $("#email-inputLogin");
+  var passwordInput = $("#password-inputLogin");
 
   // When the form is submitted, we validate there's an email and password entered
   loginForm.on("submit", function (event) {
@@ -27,7 +27,7 @@ $(document).ready(function () {
   function loginUser(email, password) {
     $.post("/api/login", {
       email: email,
-      password: password,
+      password: password
     })
       .then(function () {
         window.location.replace("/categories");

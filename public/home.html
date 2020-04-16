@@ -38,6 +38,7 @@
             <div class="columns">
                 <div class="column login-column">
                     <div class="box form-box">
+<<<<<<< HEAD
                         <div class="field">
                             <div class="alert-user hide-error">Incorrect login. Try again.</div>
                             <h2>Log In Form</h2>
@@ -45,6 +46,18 @@
                             <label class="label" id="username-line">Username</label>
                             <div class="control">
                                 <input class="input" type="text" placeholder="Username">
+=======
+                        <h2>Login Form</h2>
+                        <br />
+                        <form class="login">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">E-mail: </label>
+                                <input type="email" class="form-control" id="email-inputLogin" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password:</label>
+                                <input type="password" class="form-control" id="password-inputLogin" placeholder="Password">
+>>>>>>> 294825c689afc67fd8f703ee177b9382f855ea62
                             </div>
                             <br />
                             <label class="label" id="password">Password</label>
@@ -60,6 +73,7 @@
             </div>
         </div>
 
+<<<<<<< HEAD
 
 
 
@@ -88,6 +102,33 @@
                         <button type="submit" class="button" id="signup-screen-button">Sign Up</button>
                         <p>Or log in <a class="login-link">here</a></p>
                     </div>
+=======
+    <div class="container signup-container hide is-mobile" id="signup-container">
+        <div class="columns">
+            <div class="column is-centered signup-column">
+                <div class="box form-box">
+                    <h2>Sign Up Form</h2>
+                    <br />
+                    <form class="signup">
+                        <div class="form-group">
+                            <label for="exampleInputUsername1">Username</label>
+                            <input type="text" class="form-control" id="username-input" placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="email-inputSignup" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="password-inputSignup" placeholder="Password">
+                        </div>
+                        <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                            <span class="sr-only">Error:</span> <span class="msg"></span>
+                        </div>
+                        <button type="submit" class="btn btn-default">Sign Up</button>
+                    </form>
+>>>>>>> 294825c689afc67fd8f703ee177b9382f855ea62
                 </div>
             </div>
         </div>
@@ -104,7 +145,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/home.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
-
+        <script type="text/javascript" src="js/signup.js"></script>
 
 </body>
 
