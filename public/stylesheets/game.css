@@ -3,6 +3,11 @@ form.login {
   margin-top: 50px;
 }
 
+body, html {
+  background-color: #FFCA5A;
+  height: 100%;;
+}
+
 .hide {
   display: none;
 }
@@ -16,14 +21,14 @@ form.login {
 
 @-webkit-keyframes spin2 {
   0%  {-webkit-transform: rotateX(0deg);
-  background-color: #ffffff;}
+  background-color: #72A4C5;}
   100% {-webkit-transform: rotateX(360deg);
   background-color: #eb4634;}   
 }
 
 @-webkit-keXframes spin {
   0%  {-webkit-transform: rotateX(0deg);
-  background-color: #ffffff;}
+  background-color: #72A4C5;}
   100% {-webkit-transform: rotateX(360deg);
   background-color: #2cbf53;}   
 }
@@ -43,6 +48,8 @@ form.login {
   text-align: center;
   border-radius: 25px;
   font-size: 25px!important;
+  background-color: #0271bb!important;
+  color: white;
 }
 
 #nextQuestion {
@@ -50,6 +57,7 @@ form.login {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  background-color: #FE6355;
 }
 
 #playAgain {
