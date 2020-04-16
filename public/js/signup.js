@@ -6,12 +6,13 @@ $(document).ready(function() {
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
+    
     event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
-
+    console.log(userData);
     if (!userData.email || !userData.password) {
       return;
     }
@@ -21,7 +22,7 @@ $(document).ready(function() {
     passwordInput.val("");
   });
 
-  // Does a post to the signup route. If successful, we are redirected to the members page
+  // Does a post to the signup route. If successful, we are redirected to the categories page
   // Otherwise we log any errors
   function signUpUser(email, password) {
     $.post("/api/signup", {
@@ -29,7 +30,7 @@ $(document).ready(function() {
       password: password
     })
       .then(function(data) {
-        window.location.replace("/members");
+        window.location.replace("/categories");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);

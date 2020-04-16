@@ -59,6 +59,16 @@ module.exports = function (app) {
     });
   });
 
+  app.post("/api/highscore", function (req, res) {
+    db.Highscore.create({
+      user: req.body.user,
+      score: req.body.score,
+    }).then(function (dbHighscore) {
+      console.log("got created");
+      res.json(dbHighscore);
+    });
+  });
+
   app.post("/api/chatlog", function (req, res) {
     db.Chat.create({
       user: req.body.user,
@@ -67,16 +77,4 @@ module.exports = function (app) {
       res.json(chatlog);
     });
   });
-
-  app.post("/api/highscore", function(req, res){
-    db.Highscore.create({
-      user: req.body.user, 
-      score: req.body.score, 
-    })
-    .then(function(dbHighscore){
-      console.log("got created")
-      res.json(dbHighscore);
-    });
-  });
-
 };
