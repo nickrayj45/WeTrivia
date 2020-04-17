@@ -2,17 +2,14 @@ html {
     background-image: url("bkgrd.png");
     background-size: cover;
     height: 100%;
-    animation: backgroundcolorchange 6s infinite alternate;
+    background-color: #ffca5a;
     opacity: 1;
 }
 
-@keyframes backgroundcolorchange {
-  0% { background-color: #6c9fce }
-  33% { background-color: #fa88b3 }
-  66% { background-color: #2dd8b6 }
-  100% { background-color: #375885 }
+#q-gif {
+  outline: 2px solid #ffca5a;
+  outline-offset: -2px;
 }
-
 
 body {
   margin-top: 10%;
@@ -24,6 +21,24 @@ body {
   justify-content: center;
   font-family: 'Roboto Mono', monospace;
   font-weight: bold;
+}
+
+#signup-btn {
+  background-color: #0064B0
+}
+
+#signup-screen-button {
+  background-color: #0064B0;
+  color: white;
+}
+
+#login-screen-button {
+  background-color: #FE6355;
+  color: white;
+}
+
+#login-btn {
+  background-color: #FE6355
 }
 
 
@@ -52,19 +67,10 @@ body {
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 
-/* .login-container {
-  margin-left: 40%;
-}
-
-.signup-container {
-  margin-left: 40%
-} */
-
 .form-box {
   max-width: 300px;
   display: block;
 }
-
 
 @keyframes animate {
   0% {
@@ -74,3 +80,4 @@ body {
     background-position: 500%;
   }
 }
+
