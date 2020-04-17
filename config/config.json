@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "Sanpellegrino!!591",
+=======
+    "password": "password1!",
+>>>>>>> a97cb3fa027c5b05ec5fff4e92ccdd56e0d23560
     "database": "trivia_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
