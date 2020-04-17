@@ -33,6 +33,14 @@ body, html {
   background-color: #2cbf53;}   
 }
 
+#logout {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  margin-right: 0%;
+  background-color: #FE6355;
+}
+
 
 .rotate.activeRight {
   -webkit-animation: spin 1.3s linear;
