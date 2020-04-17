@@ -1,9 +1,11 @@
 $(function () {
-    var username = localStorage.getItem("username")
+    var username ="";
+    $.get("/api/user_data").then(function(data){
+        username = data.username;
+        getPreviousMessages();
+    });
     var socket = io("/chat");
     var chatlog = [];
-    
-    getPreviousMessages();
 
     $("form").submit(function(e){
       e.preventDefault(); // prevents page reloading
@@ -17,19 +19,30 @@ $(function () {
 
     //retrieve message
     socket.on("chat message", function(msg){
-        appendMessages(msg);
+        appendMessages(msg, username==msg.user);
     });
 
     //functions
-    function appendMessages(msg){
-        var messageChunk= `
-        <div class="card bg-primary rounded w-100 float-right z-depth-0 mb-1 last\">
-                  <div class="card-body p-2">
-                    <p class="card-text text-white">${msg.user}: ${msg.message}</p>
-                  </div>
-                </div>
-        `
-        $("#messages").append($(messageChunk));
+    function appendMessages(msg,isSelf){
+        var messageChunkSelf= `
+        <div class="card bg-primary rounded w-75 float-right z-depth-0 mb-1 last\">
+            <div class="card-body p-2">
+            <p class="card-text text-white">${msg.user}: ${msg.message}</p>
+            </div>
+        </div>
+        `;
+        var messageChunkOther=`<div class="card bg-light rounded w-75 z-depth-0 mb-1 message-text">
+        <div class="card-body p-2">
+          <p class="card-text black-text">${msg.user}: ${msg.message}</p>
+        </div>
+      </div>`;
+        if (isSelf ===true){
+            $("#messages").append($(messageChunkSelf));
+        }
+        else{
+            $("#messages").append($(messageChunkOther));
+        }
+        
         $('#messages').scrollTop($('#messages')[0].scrollHeight);
     }
 
@@ -38,7 +51,7 @@ $(function () {
             limit = chatlog.length;
         }
         for(var i =chatlog.length-limit; i<chatlog.length; i++){
-            appendMessages(chatlog[i]);
+            appendMessages(chatlog[i], username==chatlog[i].user);
         }
     }
 
