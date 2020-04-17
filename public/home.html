@@ -46,11 +46,11 @@
                         <form class="login">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">E-mail: </label>
-                                <input type="email" class="form-control" id="email-input" placeholder="Email">
+                                <input type="email" class="form-control" id="email-inputLogin" placeholder="Email">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Password:</label>
-                                <input type="password" class="form-control" id="password-input" placeholder="Password">
+                                <input type="password" class="form-control" id="password-inputLogin" placeholder="Password">
                             </div>
                             <br />
                             <button type="submit" class="button btn-default is-info">Log In</button>
@@ -70,21 +70,24 @@
                     <br />
                     <form class="signup">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">E-mail:</label>
-                            <input type="email" class="form-control" id="email-input" placeholder="Email">
+                            <label for="exampleInputUsername1">Username</label>
+                            <input type="text" class="form-control" id="username-input" placeholder="Username">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password:</label>
-                            <input type="password" class="form-control" id="password-input" placeholder="Password">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="email-inputSignup" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="password-inputSignup" placeholder="Password">
                         </div>
                         <div style="display: none" id="alert" class="alert alert-danger" role="alert">
                             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                             <span class="sr-only">Error:</span> <span class="msg"></span>
                         </div>
-                        <br />
-                        <button type="submit" class="button btn-default is-success">Sign Up</button>
-                        <p>Or log in <a class="login-link">here</a></p>
+                        <button type="submit" class="btn btn-default">Sign Up</button>
                     </form>
+                    <p>Or log in <a class="login-link">here</a></p>
                 </div>
             </div>
         </div>
@@ -92,18 +95,18 @@
 
 </div>
 
-    <audio id="startmusic">
+    <!-- <audio id="startmusic">
         <source src="audio/startjingle.mp3" type="audio/mpeg">
     </audio>
     <audio id="powerup">
         <source src="audio/startjingle.mp3" type="audio/mpeg">
-    </audio>
+    </audio> -->
 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/home.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
-
+        <script type="text/javascript" src="js/signup.js"></script>
 
 </body>
 

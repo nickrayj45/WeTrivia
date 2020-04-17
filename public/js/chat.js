@@ -20,10 +20,17 @@ $(function () {
         appendMessages(msg);
     });
 
-
     //functions
     function appendMessages(msg){
-        $("#messages").append($('<li>').text(msg.user+": "+msg.message));
+        var messageChunk= `
+        <div class="card bg-primary rounded w-100 float-right z-depth-0 mb-1 last\">
+                  <div class="card-body p-2">
+                    <p class="card-text text-white">${msg.user}: ${msg.message}</p>
+                  </div>
+                </div>
+        `
+        $("#messages").append($(messageChunk));
+        $('#messages').scrollTop($('#messages')[0].scrollHeight);
     }
 
     function showPreviousMessages(limit){
