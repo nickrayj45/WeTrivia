@@ -1,5 +1,3 @@
-import { connect } from "tls"
-import { ConnectionError } from "sequelize/types"
 
 var username = localStorage.getItem("username")
 var questionBlock = $("#question")

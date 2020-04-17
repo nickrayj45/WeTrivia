@@ -18,35 +18,35 @@ var geographyURL = "https://opentdb.com/api.php?amount=50&category=22&type=multi
 
 $(tv).on("click", function(){
     localStorage.setItem("gameType", tvURL)
-    window.location.replace("game.html");
+    window.location.replace("/game");
 });
 
 $(scienceNature).on("click", function(){
     localStorage.setItem("gameType", sciNatURL)
-    window.location.replace("game.html");
+    window.location.replace("/game");
 });
 
 $(japAnime).on("click", function(){
     localStorage.setItem("gameType", japAnimeURL)
-    window.location.replace("game.html");
+    window.location.replace("/game");
 });
 
 $(sports).on("click", function(){
     localStorage.setItem("gameType", sportsURL)
-    window.location.replace("game.html");
+    window.location.replace("/game");
 });
 
 $(genKnow).on("click", function(){
     localStorage.setItem("gameType", genKnowURL)
-    window.location.replace("game.html");
+    window.location.replace("/game");
 });
 
 $(computers).on("click", function(){
     localStorage.setItem("gameType", computersURL)
-    window.location.replace("game.html");
+    window.location.replace("/game");
 });
 
 $(geography).on("click", function(){
     localStorage.setItem("gameType", geographyURL)
-    window.location.replace("game.html");
+    window.location.replace("/game");
 });
