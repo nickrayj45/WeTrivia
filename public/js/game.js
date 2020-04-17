@@ -1,4 +1,4 @@
-var username = localStorage.getItem("username")
+// var username = localStorage.getItem("username")
 var questionBlock = $("#question")
 var ansA = $("#answer-a")
 var ansB = $("#answer-b")
@@ -6,7 +6,7 @@ var ansC = $("#answer-c")
 var ansD = $("#answer-d")
 var nextQuestion = $("#nextQuestion")
 var gameScreen = $("#gamescreen")
-var highScores = $(".highscores")
+var highScoresTable = $(".highScoresTable")
 var results = $("#resultsArea")
 var playAgain = $("#playAgain")
 //
@@ -114,9 +114,17 @@ function endGame(){
     $(questionBlock).addClass("hide")
     
     $(results).removeClass("hide")
-    $(highScores).removeClass("hide")
-    $(highScores).text("Your Score: "+playersScore)
-    
+    $(highScoresTable).removeClass("hide")
+    // $(highScores).text("Your Score: "+playersScore)
+
+    //
+    var username 
+    $.get("/api/user_data").then(function(data) {
+        username = data.username
+      });
+
+
+//sending info to database
     var newHighscore = {
         user: username,
         score: playersScore,
