@@ -71,6 +71,14 @@ module.exports = function (app) {
     });
   });
 
+  app.get("/api/highscore", function (req, res) {
+    db.Highscore.findAll({limit:10}).then(function (scores) {
+     console.log(scores)
+      res.json(scores);
+  
+    });
+  });
+
   app.post("/api/chatlog", function (req, res) {
     db.Chat.create({
       user: req.body.user,
@@ -80,3 +88,4 @@ module.exports = function (app) {
     });
   });
 };
+
