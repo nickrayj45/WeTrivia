@@ -1,9 +1,11 @@
 // Variables that we will need
-
+var startMusic = $("#startmusic")
+var powerUp = $("powerup")
 
 $("#login-btn").on("click", function () {
   $("#home").addClass("hide");
   $(".login-container").removeClass("hide");
+  powerUp.play();
 });
 
 $("#signup-btn").on("click", function () {
