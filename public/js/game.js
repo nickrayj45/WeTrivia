@@ -1,3 +1,4 @@
+
 var username = localStorage.getItem("username")
 var questionBlock = $("#question")
 var ansA = $("#answer-a")
@@ -109,14 +110,18 @@ $(".answerButton").on("click", function () {
 });
 
 function endGame(){
-    // post request to push data into db 
+    // hiding the question and answers using class hide 
     $(gameScreen).addClass("hide")
     $(questionBlock).addClass("hide")
     
+    // removing class hide from results are - allows user to see results 
     $(results).removeClass("hide")
     $(highScores).removeClass("hide")
+
     $(highScores).text("Your Score: "+playersScore)
+
     
+    // creating an object that will be pushed into the db (highscore)
     var newHighscore = {
         user: username,
         score: playersScore,
@@ -128,7 +133,13 @@ function endGame(){
 
 }
 
-$(playAgain).on("click", function(){
-    location.reload();
-})
+var username 
+
+$.get("/api/user_data").then(function(data) {
+    username = data.username
+  });
+
+// $(playAgain).on("click", function(){
+//     location.reload();
+// })
 
