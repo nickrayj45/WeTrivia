@@ -54,6 +54,9 @@ module.exports = function(app) {
   //   res.sendFile(path.join(__dirname, "../public/triviaSelection.html"));
   // });
 
+  app.get("/highscore", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/highscore.html"));
+  });
 
 
 };

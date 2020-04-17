@@ -7,16 +7,22 @@ var ansC = $("#answer-c")
 var ansD = $("#answer-d")
 var nextQuestion = $("#nextQuestion")
 var gameScreen = $("#gamescreen")
-var highScores = $(".highscores")
+var highScoresTable = $(".highScoresTable")
 var results = $("#resultsArea")
 var playAgain = $("#playAgain")
+<<<<<<< HEAD
 var right = $("#right")
 var wrong = $("#wrong")
+=======
+//
+var goHome = $("#goHome")
+>>>>>>> 26c1c71d408c4b7ad0a52232945094731acd93c5
 
 var questionAnsBlock
 var correctAns
 var questionsAsked = 0; 
 
+//replace random numbers- this keep track of score
 var playersScore 
  
 
@@ -109,37 +115,47 @@ $(".answerButton").on("click", function () {
     }
 });
 
-function endGame(){
-    // hiding the question and answers using class hide 
-    $(gameScreen).addClass("hide")
-    $(questionBlock).addClass("hide")
-    
-    // removing class hide from results are - allows user to see results 
-    $(results).removeClass("hide")
-    $(highScores).removeClass("hide")
+//end game 
+function endGame() {
+  // hiding the question and answers using class hide
+//   $(gameScreen).addClass("hide");
+//   $(questionBlock).addClass("hide");
 
-    $(highScores).text("Your Score: "+playersScore)
+//   // removing class hide from results are - allows user to see results
+//   $(results).removeClass("hide");
+//   $(highScores).removeClass("hide");
 
-    
-    // creating an object that will be pushed into the db (highscore)
-    var newHighscore = {
-        user: username,
-        score: playersScore,
-    };
+//   $(highScores).text("Your Score: " + playersScore);
 
-    $.post("/api/highscore", newHighscore, function(){
-        return
-    })
-
-}
-
-var username 
+  var username;
 
 $.get("/api/user_data").then(function(data) {
-    username = data.username
-  });
+  username = data.username;
+  var newHighscore = {
+    user: username,
+    score: playersScore
+  };
 
-// $(playAgain).on("click", function(){
-//     location.reload();
-// })
+  
+  $.post("/api/highscore", newHighscore, function() {
+    location.reload("/highscore");
+    return;
+  });
+  
+
+});
+}
+
+  // creating an object that will be pushed into the db (highscore)
+ 
+
+
+
+// $.get("/api/highscore").then(function(data) {
+//     username = data.username;
+//   });
+  
+
+
+
 
