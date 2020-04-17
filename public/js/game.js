@@ -9,6 +9,8 @@ var gameScreen = $("#gamescreen")
 var highScores = $(".highscores")
 var results = $("#resultsArea")
 var playAgain = $("#playAgain")
+var right = $("#right")
+var wrong = $("#wrong")
 
 var questionAnsBlock
 var correctAns
@@ -94,11 +96,13 @@ $(nextQuestion).on("click", function () {
 $(".answerButton").on("click", function () {
     if ($(this).text() === correctAns){
         $(this).text("CORRECT")
+        right[0].play()
         playersScore ++
         $(this).addClass('activeRight');
         setTimeout(randomQuestionGenerator,1000)
     } else {
         $(this).text("WRONG")
+        wrong[0].play()
         $(this).addClass('activeWrong');
         setTimeout(randomQuestionGenerator,1000)
     }
