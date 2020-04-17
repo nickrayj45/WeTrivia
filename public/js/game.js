@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 // var username = localStorage.getItem("username")
+=======
+
+var username = localStorage.getItem("username")
+>>>>>>> c76c221fedb95b7de825fbba4f0db7d9b55ccfd0
 var questionBlock = $("#question")
 var ansA = $("#answer-a")
 var ansB = $("#answer-b")
@@ -109,11 +114,13 @@ $(".answerButton").on("click", function () {
 
 //end game 
 function endGame(){
-    // post request to push data into db 
+    // hiding the question and answers using class hide 
     $(gameScreen).addClass("hide")
     $(questionBlock).addClass("hide")
     
+    // removing class hide from results are - allows user to see results 
     $(results).removeClass("hide")
+<<<<<<< HEAD
     $(highScoresTable).removeClass("hide")
     // $(highScores).text("Your Score: "+playersScore)
 
@@ -125,6 +132,14 @@ function endGame(){
 
 
 //sending info to database
+=======
+    $(highScores).removeClass("hide")
+
+    $(highScores).text("Your Score: "+playersScore)
+
+    
+    // creating an object that will be pushed into the db (highscore)
+>>>>>>> c76c221fedb95b7de825fbba4f0db7d9b55ccfd0
     var newHighscore = {
         user: username,
         score: playersScore,
@@ -136,10 +151,22 @@ function endGame(){
 
 }
 
+<<<<<<< HEAD
 $(playAgain).on("click", function(){
     location.reload();
 })
 $(goHome).on("click", function(){
     location.assign("home.html");
 })
+=======
+var username 
+
+$.get("/api/user_data").then(function(data) {
+    username = data.username
+  });
+
+// $(playAgain).on("click", function(){
+//     location.reload();
+// })
+>>>>>>> c76c221fedb95b7de825fbba4f0db7d9b55ccfd0
 
