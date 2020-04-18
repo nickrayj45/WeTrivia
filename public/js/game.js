@@ -1,5 +1,3 @@
-
-var username = localStorage.getItem("username")
 var questionBlock = $("#question")
 var ansA = $("#answer-a")
 var ansB = $("#answer-b")
@@ -10,6 +8,7 @@ var gameScreen = $("#gamescreen")
 var highScoresTable = $(".highScoresTable")
 var results = $("#resultsArea")
 var playAgain = $("#playAgain")
+var scoreKeeper = $(".score")
 var right = $("#right")
 var wrong = $("#wrong")
 //
@@ -97,39 +96,29 @@ function replaceAll (string){
 
 $(nextQuestion).on("click", function () {
     playersScore --
+    $(scoreKeeper).text("Your Score: "+playersScore);
     setTimeout(randomQuestionGenerator,1000)
 });
 
 $(".answerButton").on("click", function () {
     if ($(this).text() === correctAns){
-        $(this).text("CORRECT")
-        // right[0].play()
+        $(this).text("CORRECT");
         playersScore ++
         $(this).addClass('activeRight');
+        $(scoreKeeper).text("Your Score: "+playersScore);
         setTimeout(randomQuestionGenerator,1000)
-        right[0].play()
+        // right[0].play()
     } else {
-        $(this).text("WRONG")
-        // wrong[0].play()
+        $(this).text("WRONG");
         $(this).addClass('activeWrong');
         setTimeout(randomQuestionGenerator,1000)
-        wrong[0].play()
+        // wrong[0].play()
     }
 });
 
 
 function endGame() {
-  // hiding the question and answers using class hide
-//   $(gameScreen).addClass("hide");
-//   $(questionBlock).addClass("hide");
-
-//   // removing class hide from results are - allows user to see results
-//   $(results).removeClass("hide");
-//   $(highScores).removeClass("hide");
-
-//   $(highScores).text("Your Score: " + playersScore);
-
-  var newHighscore = {
+    var newHighscore = {
     score: playersScore
   };
   
