@@ -63,7 +63,7 @@ module.exports = function (app) {
 
   app.post("/api/highscore", function (req, res) {
     db.Highscore.create({
-      user: req.body.user,
+      user: req.user.username,
       score: req.body.score,
       //took away the db
     }).then(function (dbHighscore) {
@@ -73,10 +73,9 @@ module.exports = function (app) {
   });
 
   app.get("/api/highscore", function (req, res) {
-    db.Highscore.findAll({limit:10}).then(function (scores) {
-    //  console.log(scores)
+    console.log("hello")
+    db.Highscore.findAll({limit:10,order:[["score", "DESC"]]}).then(function (scores) {
       res.json(scores);
-  
     });
   });
 
