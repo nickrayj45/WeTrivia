@@ -14,3 +14,7 @@ const highScoresList = document.getElementById("highScoresList");
     })
     .join("");
   })
+
+$("#categories-btn").on("click",function(){
+  window.location.replace("/categories");
+});
