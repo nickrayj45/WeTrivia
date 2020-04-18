@@ -4,7 +4,6 @@ console.log("clicked");
 });
 
 function logout(){ 
-// console.log("Hi");
 
     $.get("/logout")
     .then(function(){
