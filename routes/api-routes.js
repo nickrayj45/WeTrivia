@@ -65,8 +65,9 @@ module.exports = function (app) {
     db.Highscore.create({
       user: req.user.username,
       score: req.body.score,
+      //took away the db
     }).then(function (dbHighscore) {
-      console.log("got created");
+      // console.log("got created");
       res.json(dbHighscore);
     });
   });
