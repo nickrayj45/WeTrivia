@@ -6,6 +6,7 @@ form.login {
 body, html {
   background-color: #FFCA5A;
   height: 100%;;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .hide {
