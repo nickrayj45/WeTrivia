@@ -46,8 +46,11 @@ $.ajax({
     url: queryURL,
     method: "GET"
 }).then(function(response){
+
+    var randNum = Math.floor(Math.random()*49)+1
+    console.log(randNum)
         
-    var questionText = response.results[0].question
+    var questionText = response.results[randNum].question
     var newQuestionStr = replaceAll(questionText)
     questionBlock.text(newQuestionStr)
     
@@ -55,8 +58,8 @@ $.ajax({
 
     correctAns =  replaceAll(response.results[0].correct_answer)
 
-    ansArray.push(response.results[0].incorrect_answers[0],response.results[0].incorrect_answers[1],response.results[0].incorrect_answers[2])
-    ansArray.push(response.results[0].correct_answer)
+    ansArray.push(response.results[randNum].incorrect_answers[0],response.results[randNum].incorrect_answers[1],response.results[randNum].incorrect_answers[2])
+    ansArray.push(response.results[randNum].correct_answer)
 
     console.log(ansArray)
 
