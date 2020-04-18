@@ -10,13 +10,10 @@ var gameScreen = $("#gamescreen")
 var highScoresTable = $(".highScoresTable")
 var results = $("#resultsArea")
 var playAgain = $("#playAgain")
-<<<<<<< HEAD
 var right = $("#right")
 var wrong = $("#wrong")
-=======
 //
 var goHome = $("#goHome")
->>>>>>> 26c1c71d408c4b7ad0a52232945094731acd93c5
 
 var questionAnsBlock
 var correctAns
@@ -37,7 +34,7 @@ function randomQuestionGenerator(){
 
 var queryURL = localStorage.getItem("gameType")
 
-if (questionsAsked>= 4){
+if (questionsAsked>= 10){
     endGame();
     return 
 }
@@ -103,15 +100,15 @@ $(nextQuestion).on("click", function () {
 $(".answerButton").on("click", function () {
     if ($(this).text() === correctAns){
         $(this).text("CORRECT")
-        right[0].play()
         playersScore ++
         $(this).addClass('activeRight');
         setTimeout(randomQuestionGenerator,1000)
+        right[0].play()
     } else {
         $(this).text("WRONG")
-        wrong[0].play()
         $(this).addClass('activeWrong');
         setTimeout(randomQuestionGenerator,1000)
+        wrong[0].play()
     }
 });
 
