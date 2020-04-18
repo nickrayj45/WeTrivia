@@ -56,7 +56,7 @@ $.ajax({
     
     var ansArray = [];
 
-    correctAns =  replaceAll(response.results[0].correct_answer)
+    correctAns =  replaceAll(response.results[randNum].correct_answer)
 
     ansArray.push(response.results[randNum].incorrect_answers[0],response.results[randNum].incorrect_answers[1],response.results[randNum].incorrect_answers[2])
     ansArray.push(response.results[randNum].correct_answer)
