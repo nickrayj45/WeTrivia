@@ -10,6 +10,8 @@ var gameScreen = $("#gamescreen")
 var highScoresTable = $(".highScoresTable")
 var results = $("#resultsArea")
 var playAgain = $("#playAgain")
+var right = $("#right")
+var wrong = $("#wrong")
 //
 var goHome = $("#goHome")
 
@@ -32,7 +34,7 @@ function randomQuestionGenerator(){
 
 var queryURL = localStorage.getItem("gameType")
 
-if (questionsAsked>= 4){
+if (questionsAsked>= 10){
     endGame();
     return 
 }
@@ -98,17 +100,21 @@ $(nextQuestion).on("click", function () {
 $(".answerButton").on("click", function () {
     if ($(this).text() === correctAns){
         $(this).text("CORRECT")
+        // right[0].play()
         playersScore ++
         $(this).addClass('activeRight');
         setTimeout(randomQuestionGenerator,1000)
+        right[0].play()
     } else {
         $(this).text("WRONG")
+        // wrong[0].play()
         $(this).addClass('activeWrong');
         setTimeout(randomQuestionGenerator,1000)
+        wrong[0].play()
     }
 });
 
-//end game 
+
 function endGame() {
   // hiding the question and answers using class hide
 //   $(gameScreen).addClass("hide");
@@ -120,33 +126,15 @@ function endGame() {
 
 //   $(highScores).text("Your Score: " + playersScore);
 
-  var username;
-
-$.get("/api/user_data").then(function(data) {
-  username = data.username;
   var newHighscore = {
-    user: username,
     score: playersScore
   };
-
   
   $.post("/api/highscore", newHighscore, function() {
     window.location.replace("/highscore");
     return;
   });
-  
-
-});
 }
-
-  // creating an object that will be pushed into the db (highscore)
- 
-
-
-
-// $.get("/api/highscore").then(function(data) {
-//     username = data.username;
-//   });
   
 
 

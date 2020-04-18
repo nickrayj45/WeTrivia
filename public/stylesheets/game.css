@@ -6,6 +6,7 @@ form.login {
 body, html {
   background-color: #FFCA5A;
   height: 100%;;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .hide {
@@ -21,16 +22,25 @@ body, html {
 
 @-webkit-keyframes spin2 {
   0%  {-webkit-transform: rotateX(0deg);
-  background-color: #72A4C5;}
+  background-color: #ffffff;}
   100% {-webkit-transform: rotateX(360deg);
   background-color: #eb4634;}   
 }
 
 @-webkit-keXframes spin {
   0%  {-webkit-transform: rotateX(0deg);
-  background-color: #72A4C5;}
+  background-color: #ffffff;}
   100% {-webkit-transform: rotateX(360deg);
   background-color: #2cbf53;}   
+}
+
+#logout {
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  margin-right: 0%;
+  background-color: #FE6355;
+  border-radius: 25px;
 }
 
 
@@ -58,6 +68,7 @@ body, html {
   display: flex;
   justify-content: center;
   background-color: #FE6355;
+  border-radius: 25px;
 }
 
 #playAgain {

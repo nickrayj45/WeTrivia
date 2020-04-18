@@ -49,12 +49,8 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/categories.html"));
   });
 
-  // // once the user is logged in, send them to the categories page.
-  // app.get("/triviaSelection", isAuthenticated, function(req, res) {
-  //   res.sendFile(path.join(__dirname, "../public/triviaSelection.html"));
-  // });
 
-  app.get("/highscore", isAuthenticated, function(req, res) {
+  app.get("/highscore", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/highscore.html"));
   });
 
