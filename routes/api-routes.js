@@ -65,15 +65,16 @@ module.exports = function (app) {
     db.Highscore.create({
       user: req.body.user,
       score: req.body.score,
+      //took away the db
     }).then(function (dbHighscore) {
-      console.log("got created");
+      // console.log("got created");
       res.json(dbHighscore);
     });
   });
 
   app.get("/api/highscore", function (req, res) {
     db.Highscore.findAll({limit:10}).then(function (scores) {
-     console.log(scores)
+    //  console.log(scores)
       res.json(scores);
   
     });

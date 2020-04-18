@@ -131,7 +131,7 @@ $.get("/api/user_data").then(function(data) {
 
   
   $.post("/api/highscore", newHighscore, function() {
-    location.reload("/highscore");
+    window.location.replace("/highscore");
     return;
   });
   
