@@ -16,12 +16,13 @@
             <h3>Your Score: </h3>
         </div>
         <div>
-            <button class="logout">Logout </button>
+            <button class="button is-danger logout" id="logout">Logout </button>
         </div>
         </br>
         <article class="has-background-primary is-size-5" id="question">
         </article>
         </br>
+        
         <div class="container" id="gamescreen">
             <div class="columns">
                 <div class="column">
@@ -43,18 +44,12 @@
                 </br>
             </div>
             <div>
-                <button class="button is-warning" id="nextQuestion">Skip</button>
+                <button class="button is-danger" id="nextQuestion">Skip</button>
             </div>
         </div>
-        <div class="column hide" id="resultsArea">
-            <div class="card choice is-size-4 highscores">
-            </div>
-        </br>
-            <button class="button is-warning" id="playAgain">
-            Play Again!</button>
-        </div>
-        </br>
-    </div>
+
+<!-- Results Area -->
+
 <!-- whole messenger -->
     <div class="container mt-5" id="chatMessenger">
         <!-- Grid row -->
@@ -106,7 +101,6 @@
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="js/chat.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
-
     <script type="text/javascript" src="js/logout.js"></script>
 
     <audio id="wrong">
