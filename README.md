@@ -84,7 +84,7 @@ Source code for this project available [here](https://github.com/nickrayj45/WeTr
 
 ## Contributors
 
-- [Ana Vadivia](https://github.com/anabee)
+- [Ana Valdivia](https://github.com/anabee)
 - [Ye Chan Lee](https://github.com/yechan96)
 - [Kevin Hall](https://github.com/kevinmhall8)
 - [Nicholas Jaquez](https://github.com/nickrayj45)
