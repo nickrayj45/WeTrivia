@@ -27,12 +27,12 @@ body, html {
   background-color: #eb4634;}   
 }
 
-@-webkit-keXframes spin {
+/* @-webkit-keXframes spin {
   0%  {-webkit-transform: rotateX(0deg);
   background-color: #ffffff;}
   100% {-webkit-transform: rotateX(360deg);
   background-color: #2cbf53;}   
-}
+} */
 
 #logout {
   text-align: center;
@@ -45,7 +45,8 @@ body, html {
 
 
 .rotate.activeRight {
-  -webkit-animation: spin 1.3s linear;
+  background-color: #59c979;
+  /* -webkit-animation: spin 1.3s linear; */
 }
 
 .rotate.activeWrong {
